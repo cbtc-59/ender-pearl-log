@@ -74,7 +74,7 @@ logs/ender-pearl.log
 
 ## 构建
 
-构建需要 JDK 25 和 Gradle 9.5.1。仓库当前不包含 Gradle Wrapper，请先在本机安装对应版本。
+构建需要 JDK 25 和 Gradle 9.8.2。仓库当前不包含 Gradle Wrapper，请先在本机安装对应版本。
 
 ```powershell
 $env:JAVA_HOME = '<JDK 25 安装目录>'
@@ -106,7 +106,7 @@ gradle runServer
 - Fabric API 0.155.3+26.1.2
 - 21 个对照模组
 
-GitHub Actions 会使用 JDK 25 和 Gradle 9.5.1 执行构建，并上传不含源码包的模组 JAR。
+GitHub Actions 会使用 JDK 25 和 Gradle 9.8.2 执行构建，并上传不含源码包的模组 JAR。
 
 ## 已知限制
 

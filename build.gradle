@@ -1,5 +1,5 @@
 plugins {
-	id 'net.fabricmc.fabric-loom' version '1.17.21'
+	id 'net.fabricmc.fabric-loom' version '1.19.3'
 }
 
 // 版本已写入归档文件名，避免 Gradle 再追加一份 -v0.1.0。
