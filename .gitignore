@@ -1,0 +1,20 @@
+.gradle/
+build/
+out/
+run/
+*.iml
+.idea/
+.vscode/
+AGENTS.md
+CLAUDE.md
+
+# 本机集成测试准备脚本
+tools/prepare-integration-test.ps1
+
+# 日志与敏感文件
+*.log
+*.log.gz
+.env
+.env.*
+*.key
+*.pem

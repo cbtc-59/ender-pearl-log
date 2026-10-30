@@ -1,0 +1,62 @@
+plugins {
+	id 'net.fabricmc.fabric-loom' version '1.17.21'
+}
+
+// 版本已写入归档文件名，避免 Gradle 再追加一份 -v0.1.0。
+version = ''
+group = project.maven_group
+
+base {
+	archivesName = "${archives_base_name}-fabric-mc${minecraft_version}-v${mod_version}"
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${minecraft_version}"
+	implementation "net.fabricmc:fabric-loader:${loader_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
+}
+
+loom {
+	runs {
+		server {
+			// 正式客户端不会注册 owo 调试命令，开发服务端需关闭对应注册表项。
+			vmArg "-Dowo.debug=false"
+		}
+	}
+}
+
+processResources {
+	def modProperties = [
+		id: project.mod_id,
+		name: project.mod_name,
+		version: project.mod_version,
+		minecraft_version: project.minecraft_version,
+		loader_version: project.loader_version
+	]
+	inputs.properties(modProperties)
+	filesMatching('fabric.mod.json') {
+		expand(modProperties)
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	options.release = 25
+	options.encoding = 'UTF-8'
+}
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(25)
+	}
+	withSourcesJar()
+}
+
+jar {
+	from('LICENSE') {
+		rename { "${it}_${archives_base_name}" }
+	}
+}
