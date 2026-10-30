@@ -4,6 +4,8 @@
 
 模组不会阻止珍珠传送、碰撞、死亡清除或区块卸载，也不会修改世界数据。所有记录由独立线程异步写入，避免阻塞服务端 tick。
 
+[源代码](https://github.com/cbtc-59/ender-pearl-log) · [问题反馈](https://github.com/cbtc-59/ender-pearl-log/issues) · [MIT License](LICENSE)
+
 ## 功能
 
 - 服务端启动和停止
@@ -30,7 +32,7 @@
 
 ## 安装
 
-1. 从 Releases 页面下载文件名不以 `-sources` 结尾的 JAR。
+1. 从 [Releases](https://github.com/cbtc-59/ender-pearl-log/releases) 页面下载文件名不以 `-sources` 结尾的 JAR。
 2. 删除服务器 `mods` 目录中的旧版本。
 3. 将 JAR 放入服务器的 `mods` 目录。
 4. 正常重启服务器。
@@ -103,6 +105,8 @@ gradle runServer
 - Fabric Loader 0.20.1
 - Fabric API 0.155.3+26.1.2
 - 21 个对照模组
+
+GitHub Actions 会使用 JDK 25 和 Gradle 9.5.1 执行构建，并上传不含源码包的模组 JAR。
 
 ## 已知限制
 

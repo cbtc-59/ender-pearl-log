@@ -9,6 +9,11 @@
 	],
 	"license": "MIT",
 	"environment": "server",
+	"contact": {
+		"homepage": "https://github.com/cbtc-59/ender-pearl-log",
+		"sources": "https://github.com/cbtc-59/ender-pearl-log",
+		"issues": "https://github.com/cbtc-59/ender-pearl-log/issues"
+	},
 	"entrypoints": {
 		"main": [
 			"io.github.cbtc_59.enderpearllog.EnderPearlLog"
